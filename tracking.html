@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Live Tracking - Pakistan Railways</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-flex-row">
+            <a href="index.html" class="brand-logo"><div class="logo-icon"><i class="fa-solid fa-train-subway"></i></div><div class="logo-text"><h1>Pakistan Railways</h1></div></a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="timings.html" class="nav-link">Train Timings</a></li>
+                    <li><a href="tracking.html" class="nav-link active">Live Tracking</a></li>
+                    <li><a href="freight.html" class="nav-link">Freight Services</a></li>
+                    <li><a href="catering.html" class="nav-link">E-Catering</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title-banner"><h2>Live GPS Train Tracking</h2><p>Real-time telemetry and active transit position data system.</p></section>
+    
+    <main class="main-content-area">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="custom-table">
+                    <thead>
+                        <tr><th>Train Code</th><th>Train Identity</th><th>Current Near Station</th><th>Estimated Delay</th><th>Current Track Speed</th><th>Status Update</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>5UP</td><td>Green Line Express</td><td>Rohri Junction</td><td>0 Mins</td><td>105 km/h</td><td><span class="status-badge ontime">On Time</span></td></tr>
+                        <tr><td>42DN</td><td>Karakoram Express</td><td>Nawabshah Station</td><td>15 Mins</td><td>95 km/h</td><td><span class="status-badge delayed">Delayed</span></td></tr>
+                        <tr><td>7UP</td><td>Tezgam Express</td><td>Khanewal Junction</td><td>0 Mins</td><td>100 km/h</td><td><span class="status-badge ontime">On Time</span></td></tr>
+                        <tr><td>34DN</td><td>Pak Business Express</td><td>Hyderabad City</td><td>45 Mins</td><td>80 km/h</td><td><span class="status-badge delayed">Delayed</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer"><div class="container text-center"><p>&copy; 2026 Pakistan Railways. Track data updates dynamically via Satellite GPS.</p></div></footer>
+</body>
+</html>

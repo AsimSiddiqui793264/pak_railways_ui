@@ -3,210 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pakistan Railways Redesign</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Pakistan Railways - Official Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="main-header">
-        <nav class="nav-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fa-solid fa-train-subway"></i>
-                </div>
-                <div class="logo-text">
-                    <span class="brand-title">PAKISTAN</span>
-                    <span class="brand-sub">RAILWAYS</span>
-                </div>
+        <div class="container header-flex-row">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-train-subway"></i></div>
+                <div class="logo-text"><h1>Pakistan Railways</h1><span>Government of Pakistan</span></div>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="timings.html" class="nav-link">Train Timings</a></li>
+                    <li><a href="tracking.html" class="nav-link">Live Tracking</a></li>
+                    <li><a href="freight.html" class="nav-link">Freight Services</a></li>
+                    <li><a href="catering.html" class="nav-link">E-Catering</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-actions">
+                <button class="btn btn-outline" onclick="openModal('loginModal')">Login</button>
+                <button class="btn btn-primary" onclick="openModal('signupModal')">Sign Up</button>
+                <div class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></div>
             </div>
-            
-            <ul class="nav-links">
-                <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="#"><i class="fa-solid fa-calendar-days"></i> Timings</a></li>
-                <li><a href="#"><i class="fa-solid fa-location-crosshairs"></i> Live Tracking</a></li>
-                <li><a href="#"><i class="fa-solid fa-headset"></i> Helpline</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <button class="btn-lang" aria-label="Switch Language to Urdu">اردو</button>
-                <button class="btn-login">Sign In</button>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-text-wrapper">
-                    <h1>Where Will Your Journey Take You?</h1>
-                    <p>Experience safe, reliable, and beautifully reimagined rail travel across Pakistan.</p>
+    <section class="hero-section">
+        <div class="container text-center">
+            <span class="hero-badge">Welcome to the New Era of Rail Travel</span>
+            <h2 class="hero-title">Your Safest Journey, Redefined</h2>
+            <p class="hero-subtitle">Book tickets effortlessly across Pakistan's breathtaking landscapes.</p>
+            <div class="booking-widget">
+                <div class="widget-tabs"><button class="tab-btn active"><i class="fa-solid fa-ticket"></i> Book E-Ticket</button></div>
+                <form class="booking-form" onsubmit="event.preventDefault();">
+                    <div class="form-group"><label><i class="fa-solid fa-location-dot"></i> From Station</label>
+                        <select required><option value="" disabled selected>Select Origin</option><option>Lahore Junction</option><option>Karachi Cantt</option><option>Rawalpindi</option></select></div>
+                    <div class="form-group"><label><i class="fa-solid fa-location-crosshairs"></i> To Station</label>
+                        <select required><option value="" disabled selected>Select Destination</option><option>Karachi Cantt</option><option>Lahore Junction</option><option>Rawalpindi</option></select></div>
+                    <div class="form-group"><label><i class="fa-solid fa-calendar-alt"></i> Departure Date</label><input type="date" required></div>
+                    <div class="form-group"><label><i class="fa-solid fa-couch"></i> Class</label><select><option>All Classes</option><option>AC Business</option><option>Economy Class</option></select></div>
+                    <button type="submit" class="btn btn-search"><i class="fa-solid fa-magnifying-glass"></i> Find Trains</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header text-center"><h2>Our Premium Express Networks</h2><p>Our top-rated express train networks connecting economic hubs daily.</p></div>
+            <div class="grid grid-3">
+                <div class="service-card">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=600&q=80" alt="Green Line Express"></div>
+                    <div class="card-body"><h3>Green Line Express</h3><p>Luxury commuting between Islamabad and Karachi with full executive catering and onboard Wi-Fi services.</p><a href="#" class="card-link">View Details <i class="fa-solid fa-chevron-right"></i></a></div>
                 </div>
-
-                <div class="booking-card">
-                    <div class="card-header">
-                        <span class="tab active"><i class="fa-solid fa-ticket"></i> Book Ticket</span>
-                        <span class="tab"><i class="fa-solid fa-clock"></i> Check Schedule</span>
-                    </div>
-                    
-                    <form id="bookingForm" class="booking-form" autocomplete="off">
-                        <div class="input-grid">
-                            <div class="input-group">
-                                <label><i class="fa-solid fa-location-dot"></i> From Station</label>
-                                <div class="input-wrapper">
-                                    <input type="text" id="fromStation" placeholder="Departure Station" required>
-                                    <div id="fromSuggestions" class="suggestion-box"></div>
-                                </div>
-                            </div>
-
-                            <div class="swap-stations">
-                                <i class="fa-solid fa-arrows-rotate"></i>
-                            </div>
-
-                            <div class="input-group">
-                                <label><i class="fa-solid fa-location-arrow"></i> To Station</label>
-                                <div class="input-wrapper">
-                                    <input type="text" id="toStation" placeholder="Destination Station" required>
-                                    <div id="toSuggestions" class="suggestion-box"></div>
-                                </div>
-                            </div>
-
-                            <div class="input-group">
-                                <label><i class="fa-solid fa-calendar-alt"></i> Journey Date</label>
-                                <input type="date" id="journeyDate" required>
-                            </div>
-
-                            <div class="input-group">
-                                <label><i class="fa-solid fa-couch"></i> Preferred Class</label>
-                                <select id="travelClass">
-                                    <option value="economy">Economy Class</option>
-                                    <option value="ac-business">AC Business</option>
-                                    <option value="ac-sleeper">AC Sleeper</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn-search">
-                            <span>Search Available Trains</span> <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </form>
+                <div class="service-card">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="Tezgam Express"></div>
+                    <div class="card-body"><h3>Tezgam Express</h3><p>One of the oldest and most trusted routes linking Karachi and Rawalpindi daily through reliable timelines.</p><a href="#" class="card-link">View Details <i class="fa-solid fa-chevron-right"></i></a></div>
+                </div>
+                <div class="service-card">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1532103054090-334e6e60ab29?auto=format&fit=crop&w=600&q=80" alt="Karakoram Express"></div>
+                    <div class="card-body"><h3>Karakoram Express</h3><p>Daily fast transit serving passenger traffic seamlessly between Lahore Junction and Karachi Cantt.</p><a href="#" class="card-link">View Details <i class="fa-solid fa-chevron-right"></i></a></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="results-section" id="resultsPanel">
-            <div class="results-container">
-                <div class="results-meta">
-                    <h2><i class="fa-solid fa-train"></i> Available Express Routings</h2>
-                    <p id="searchSummary">Showing departures matches</p>
-                </div>
+    <div class="modal-overlay" id="loginModal"><div class="modal-box"><div class="modal-close" onclick="closeModal('loginModal')">&times;</div><div class="modal-header"><h3>Welcome Back</h3><p>Sign in to your passenger account.</p></div><form><div class="form-group input-icon"><i class="fa-solid fa-envelope"></i><input type="email" placeholder="Email Address"></div><div class="form-group input-icon"><i class="fa-solid fa-lock"></i><input type="password" placeholder="Password"></div><button type="submit" class="btn btn-primary w-100">Sign In</button></form></div></div>
+    <div class="modal-overlay" id="signupModal"><div class="modal-box"><div class="modal-close" onclick="closeModal('signupModal')">&times;</div><div class="modal-header"><h3>Create Account</h3><p>Register to book swift e-tickets.</p></div><form><div class="form-group input-icon"><i class="fa-solid fa-user"></i><input type="text" placeholder="Full Name"></div><div class="form-group input-icon"><i class="fa-solid fa-envelope"></i><input type="email" placeholder="Email Address"></div><button type="submit" class="btn btn-primary w-100">Register</button></form></div></div>
 
-                <div id="trainList" class="train-list-grid">
-                    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h3>Pakistan Railways</h3><p>Connecting the nation safely since 1861 through reliable timelines and modern high-speed infrastructure.</p></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="timings.html">Train Timings</a></li><li><a href="tracking.html">Live Tracking</a></li><li><a href="freight.html">Freight Operations</a></li></ul></div>
             </div>
-        </section>
-    </main>
-
-    <script>
-        const stations = ["Karachi Cantt", "Lahore Junction", "Rawalpindi", "Faisalabad", "Multan Cantt", "Peshawar Cantt", "Quetta"];
-        const trains = [
-            { name: "Green Line Express", code: "1UP", departure: "22:00", arrival: "16:15", time: "18h 15m", price: "4,500", tags: ["Premium", "AC Included"] },
-            { name: "Karakoram Express", code: "42DN", departure: "16:00", arrival: "10:30", time: "18h 30m", price: "3,800", tags: ["Punctual"] },
-            { name: "Tezgam Express", code: "7UP", departure: "17:30", arrival: "13:45", time: "20h 15m", price: "3,200", tags: ["Budget Friendly"] }
-        ];
-
-        // Safe setup for dates
-        const datePicker = document.getElementById('journeyDate');
-        const formattedToday = new Date().toISOString().split('T')[0];
-        datePicker.min = formattedToday;
-        datePicker.value = formattedToday;
-
-        // Custom Autocomplete Feature
-        function bindAutocomplete(input, box) {
-            input.addEventListener('input', () => {
-                const query = input.value.toLowerCase();
-                box.innerHTML = '';
-                if (!query) { box.style.display = 'none'; return; }
-                
-                const matches = stations.filter(s => s.toLowerCase().includes(query));
-                if (matches.length > 0) {
-                    matches.forEach(match => {
-                        const row = document.createElement('div');
-                        row.innerHTML = `<i class="fa-solid fa-train-tram"></i> ${match}`;
-                        row.addEventListener('click', () => {
-                            input.value = match;
-                            box.style.display = 'none';
-                        });
-                        box.appendChild(row);
-                    });
-                    box.style.display = 'block';
-                } else {
-                    box.style.display = 'none';
-                }
-            });
-        }
-
-        bindAutocomplete(document.getElementById('fromStation'), document.getElementById('fromSuggestions'));
-        bindAutocomplete(document.getElementById('toStation'), document.getElementById('toSuggestions'));
-
-        // Form Submit Simulation
-        document.getElementById('bookingForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const from = document.getElementById('fromStation').value;
-            const to = document.getElementById('toStation').value;
-            const panel = document.getElementById('resultsPanel');
-            const list = document.getElementById('trainList');
-
-            if (!stations.includes(from) || !stations.includes(to)) {
-                alert("Please select official stations from the auto-suggest items.");
-                return;
-            }
-
-            list.innerHTML = `<div class="loader"><i class="fa-solid fa-spinner fa-spin"></i> Fetching Live Train Rosters...</div>`;
-            panel.style.display = 'block';
-            panel.scrollIntoView({ behavior: 'smooth' });
-
-            setTimeout(() => {
-                list.innerHTML = '';
-                document.getElementById('searchSummary').textContent = `Found ${trains.length} high-speed trains running from ${from} to ${to}`;
-                
-                trains.forEach(t => {
-                    const el = document.createElement('div');
-                    el.className = 'train-card-modern';
-                    el.innerHTML = `
-                        <div class="train-main-info">
-                            <span class="train-code">${t.code}</span>
-                            <h3>${t.name}</h3>
-                            <div class="tag-row">${t.tags.map(tag => `<span class="badge">${tag}</span>`).join('')}</div>
-                        </div>
-                        <div class="train-route-timeline">
-                            <div class="station-node">
-                                <strong>${t.departure}</strong>
-                                <span>${from.split(' ')[0]}</span>
-                            </div>
-                            <div class="timeline-line">
-                                <span class="duration-text">${t.time}</span>
-                                <div class="line-visual"><i class="fa-solid fa-circle-chevron-right"></i></div>
-                            </div>
-                            <div class="station-node">
-                                <strong>${t.arrival}</strong>
-                                <span>${to.split(' ')[0]}</span>
-                            </div>
-                        </div>
-                        <div class="train-pricing-action">
-                            <div class="price-display">
-                                <span class="currency">PKR</span>
-                                <span class="amount">${t.price}</span>
-                            </div>
-                            <button class="btn-book" onclick="alert('Proceeding to graphical seating coach alignment map!')">Select Seats</button>
-                        </div>
-                    `;
-                    list.appendChild(el);
-                });
-            }, 1000);
-        });
-    </script>
+            <div class="footer-bottom text-center"><p>&copy; 2026 Pakistan Railways. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+    <script src="auth-script.js"></script>
 </body>
 </html>

@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pakistan Railways - Official Portal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="main-header">
         <div class="container header-flex-row">
+            
             <a href="index.html" class="brand-logo">
                 <div class="logo-icon"><i class="fa-solid fa-train-subway"></i></div>
-                <div class="logo-text"><h1>Pakistan Railways</h1><span>Government of Pakistan</span></div>
+                <div class="logo-text">
+                    <h1>Pakistan Railways</h1>
+                    <span>Government of Pakistan</span>
+                </div>
             </a>
+
             <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html" class="nav-link active">Home</a></li>
@@ -26,17 +33,27 @@
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
             <div class="auth-actions">
                 <button class="btn btn-outline" onclick="openModal('loginModal')">Login</button>
                 <button class="btn btn-primary" onclick="openModal('signupModal')">Sign Up</button>
                 <div class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></div>
             </div>
+
         </div>
     </header>
 
-    
+    <section class="hero-section">
+        <div class="container text-center">
+            <span class="hero-badge">Welcome to the New Era of Rail Travel</span>
+            <h2 class="hero-title">Your Safest Journey, Redefined</h2>
+            <p class="hero-subtitle">Book tickets effortlessly across Pakistan's breathtaking landscapes.</p>
+            
+           
+        </div>
+    </section>
 
-  <section class="services-section">
+    <section class="services-section">
         <div class="container">
             <div class="section-header text-center">
                 <h2>Our Premium Express Networks</h2>
@@ -44,21 +61,21 @@
             </div>
             
             <div class="grid grid-3">
-               <div class="service-card">
-    <div class="card-img">
-        <img src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=600&q=80" alt="Green Line Express" style="width: 100%; height: 100%; object-fit: cover;">
-        <span class="card-tag">Premium</span>
-    </div>
-    <div class="card-body">
-        <h3>Green Line Express</h3>
-        <p>Luxury commuting between Islamabad and Karachi with full executive catering and onboard Wi-Fi services.</p>
-        <a href="#" class="card-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
-    </div>
-</div>
+                <div class="service-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=600&q=80" alt="Green Line Express">
+                        <span class="card-tag">Premium</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Green Line Express</h3>
+                        <p>Luxury commuting between Islamabad and Karachi with full executive catering and onboard Wi-Fi services.</p>
+                        <a href="#" class="card-link">View Details <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
 
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="Tezgam Express" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=600&q=80" alt="Tezgam Express">
                         <span class="card-tag">Popular</span>
                     </div>
                     <div class="card-body">
@@ -70,7 +87,7 @@
 
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?auto=format&fit=crop&w=600&q=80" alt="Karakoram Express" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?auto=format&fit=crop&w=600&q=80" alt="Karakoram Express">
                         <span class="card-tag">Fastest</span>
                     </div>
                     <div class="card-body">
@@ -83,18 +100,40 @@
         </div>
     </section>
 
-    <div class="modal-overlay" id="loginModal"><div class="modal-box"><div class="modal-close" onclick="closeModal('loginModal')">&times;</div><div class="modal-header"><h3>Welcome Back</h3><p>Sign in to your passenger account.</p></div><form><div class="form-group input-icon"><i class="fa-solid fa-envelope"></i><input type="email" placeholder="Email Address"></div><div class="form-group input-icon"><i class="fa-solid fa-lock"></i><input type="password" placeholder="Password"></div><button type="submit" class="btn btn-primary w-100">Sign In</button></form></div></div>
-    <div class="modal-overlay" id="signupModal"><div class="modal-box"><div class="modal-close" onclick="closeModal('signupModal')">&times;</div><div class="modal-header"><h3>Create Account</h3><p>Register to book swift e-tickets.</p></div><form><div class="form-group input-icon"><i class="fa-solid fa-user"></i><input type="text" placeholder="Full Name"></div><div class="form-group input-icon"><i class="fa-solid fa-envelope"></i><input type="email" placeholder="Email Address"></div><button type="submit" class="btn btn-primary w-100">Register</button></form></div></div>
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-box">
+            <div class="modal-close" onclick="closeModal('loginModal')">&times;</div>
+            <div class="modal-header"><h3>Welcome Back</h3><p>Sign in to your passenger profile account.</p></div>
+            <form onsubmit="event.preventDefault();">
+                <div class="form-group input-icon"><i class="fa-solid fa-envelope"></i><input type="email" placeholder="Email Address" required></div>
+                <div class="form-group input-icon"><i class="fa-solid fa-lock"></i><input type="password" placeholder="Password" required></div>
+                <button type="submit" class="btn btn-primary w-100">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal-box">
+            <div class="modal-close" onclick="closeModal('signupModal')">&times;</div>
+            <div class="modal-header"><h3>Create Account</h3><p>Register to book swift e-tickets.</p></div>
+            <form onsubmit="event.preventDefault();">
+                <div class="form-group input-icon"><i class="fa-solid fa-user"></i><input type="text" placeholder="Full Name" required></div>
+                <div class="form-group input-icon"><i class="fa-solid fa-envelope"></i><input type="email" placeholder="Email Address" required></div>
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+        </div>
+    </div>
 
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand"><h3>Pakistan Railways</h3><p>Connecting the nation safely since 1861 through reliable timelines and modern high-speed infrastructure.</p></div>
-                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="timings.html">Train Timings</a></li><li><a href="tracking.html">Live Tracking</a></li><li><a href="freight.html">Freight Operations</a></li></ul></div>
+                <div class="footer-brand"><h3>Pakistan Railways</h3><p>Connecting the nation safely since 1861.</p></div>
+                <div class="footer-links"><h4>Services</h4><ul><li><a href="timings.html">Train Timings</a></li><li><a href="tracking.html">Live Tracking</a></li></ul></div>
             </div>
             <div class="footer-bottom text-center"><p>&copy; 2026 Pakistan Railways. All Rights Reserved.</p></div>
         </div>
     </footer>
+
     <script src="auth-script.js"></script>
 </body>
 </html>

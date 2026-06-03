@@ -15,7 +15,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 body { background-color: var(--light-bg); color: var(--text-dark); overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
-.container { width: 90%; max-width: 1320px; margin: 0 auto; }
+.container { width: 90%; max-width: 1320px; margin: 0 auto; position: relative; }
 .text-center { text-align: center; }
 .w-100 { width: 100%; }
 
@@ -48,28 +48,33 @@ body { background-color: var(--light-bg); color: var(--text-dark); overflow-x: h
 .btn-primary:hover { background-color: var(--pak-green-light); }
 .menu-toggle { display: none; font-size: 1.4rem; cursor: pointer; color: var(--pak-green); }
 
-/* HERO DESIGN (HOME PAGE) */
-.hero-section { background: linear-gradient(rgba(15, 24, 20, 0.85), rgba(15, 24, 20, 0.95)), url('https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=1400&q=80') center/cover; padding: 80px 0 200px 0; color: var(--white); }
+/* CLASSIC SOLID HERO BACKDROP */
+/* CLASSIC PREMIUM HERO BACKDROP WITH TRAIN IMAGE */
+.hero-section { 
+    background: linear-gradient(rgba(15, 24, 20, 0.75), rgba(15, 24, 20, 0.85)), 
+                url('https://zameenblog.s3.amazonaws.com/blog/wp-content/uploads/2020/04/All-You-Need-to-Know-About-Pakistan-Railways-Cover-15-04.jpg') center/cover no-repeat; 
+    padding: 100px 0 160px 0; 
+    color: var(--white); 
+    width: 100%;
+    position: relative;
+}
 .hero-badge { background: rgba(218, 170, 0, 0.15); color: var(--gold); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 20px; }
-.hero-title { font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; }
-.hero-subtitle { max-width: 650px; margin: 0 auto 45px auto; color: rgba(255, 255, 255, 0.7); }
+.hero-title { font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.hero-subtitle { max-width: 650px; margin: 0 auto 45px auto; color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; }
 
-/* INNER PAGES COMMON BANNER */
-.page-title-banner { background: linear-gradient(rgba(15, 24, 20, 0.85), rgba(15, 24, 20, 0.95)), url('https://images.unsplash.com/photo-1541417904950-b855846fe074?auto=format&fit=crop&w=1400&q=80') center/cover; padding: 60px 0; color: var(--white); text-align: center; }
-.page-title-banner h2 { font-size: 2.2rem; margin-bottom: 10px; color: var(--white); }
-.page-title-banner p { color: rgba(255, 255, 255, 0.7); font-size: 1rem; }
-
-/* MAIN CONTENT AREA & SECTIONS */
-.main-content-area { padding: 60px 0; flex: 1; }
-.services-section { padding: 340px 0 80px 0; }
-.section-header h2 { font-size: 2rem; color: var(--pak-green); margin-bottom: 10px; }
-.section-header p { color: var(--text-muted); margin-bottom: 45px; }
-.grid { display: grid; gap: 30px; }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); }
-
-/* BOOKING WIDGET */
-.booking-widget { background: var(--white); border-radius: var(--border-radius-lg); padding: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); color: var(--text-dark); max-width: 1100px; margin: 0 auto -280px auto; text-align: left; }
+/* BOOKING WIDGET COMPACT REMAP WITH FIXED MARGINS */
+.booking-widget { 
+    background: var(--white); 
+    border-radius: var(--border-radius-lg); 
+    padding: 30px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15); 
+    color: var(--text-dark); 
+    max-width: 1100px; 
+    margin: 0 auto -210px auto; 
+    text-align: left; 
+    position: relative;
+    z-index: 50;
+}
 .widget-tabs { display: flex; gap: 15px; margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; }
 .tab-btn { background: none; border: none; font-size: 0.95rem; font-weight: 600; color: var(--pak-green); border-bottom: 3px solid var(--pak-green); padding-bottom: 12px; cursor: pointer; }
 .booking-form { display: grid; grid-template-columns: repeat(4, 1fr) 160px; gap: 20px; align-items: flex-end; }
@@ -81,35 +86,26 @@ body { background-color: var(--light-bg); color: var(--text-dark); overflow-x: h
 .btn-search { background-color: var(--gold); color: var(--dark); height: 48px; border-radius: var(--border-radius-md); font-weight: 700; border: none; cursor: pointer; transition: var(--transition); }
 .btn-search:hover { background-color: #c49900; transform: translateY(-2px); }
 
-/* SERVICE CARDS & IMAGES */
+/* GAP SOLVED HERE: REDUCED TOP PADDING FROM 340px TO 260px FOR CRISP PROXIMITY */
+.services-section { padding: 260px 0 80px 0; background-color: var(--light-bg); position: relative; z-index: 10; }
+.section-header h2 { font-size: 2rem; color: var(--pak-green); margin-bottom: 10px; font-weight: 700; }
+.section-header p { color: var(--text-muted); margin-bottom: 45px; }
+
+/* SERVICES CARDS & OTHER PROPERTIES */
+.grid { display: grid; gap: 30px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); }
 .service-card { background: var(--white); border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
-.service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 47, 23, 0.1); }
+.service-card:hover { transform: translateY(-8px); }
 .card-img { position: relative; height: 210px; background-color: #eee; }
-.card-img img { width: 100%; height: 100%; object-fit: cover; }
-.card-tag { position: absolute; top: 15px; left: 15px; background: var(--white); color: var(--pak-green); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-tag { position: absolute; top: 15px; left: 15px; background: var(--white); color: var(--pak-green); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; z-index: 10; }
 .card-body { padding: 25px; }
 .card-body h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-dark); }
 .card-body p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
 .card-link { text-decoration: none; color: var(--pak-green); font-weight: 600; display: flex; align-items: center; gap: 5px; }
 
-/* REUSABLE TABLES */
-.table-responsive { overflow-x: auto; margin-top: 20px; box-shadow: var(--shadow); border-radius: var(--border-radius-lg); background: var(--white); }
-.custom-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; min-width: 600px; }
-.custom-table th { background-color: var(--pak-green); color: var(--white); padding: 16px; font-weight: 600; }
-.custom-table td { padding: 16px; border-bottom: 1px solid #e2e8f0; color: var(--text-dark); }
-.custom-table tr:last-child td { border-bottom: none; }
-.custom-table tr:nth-child(even) { background-color: #f8fafc; }
-.status-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block; }
-.status-badge.ontime { background-color: #dcfce7; color: #166534; }
-.status-badge.delayed { background-color: #fee2e2; color: #991b1b; }
-
-/* PACKAGES GRID FOR LOGISTICS/CATERING */
-.feature-info-box { background: var(--white); padding: 35px; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); border-top: 4px solid var(--pak-green); }
-.feature-info-box h3 { font-size: 1.4rem; color: var(--pak-green); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-.feature-info-box ul { list-style-position: inside; color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; }
-.feature-info-box ul li { margin-bottom: 8px; }
-
-/* MODALS */
+/* MODALS SYSTEM */
 .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(15, 24, 20, 0.6); backdrop-filter: blur(5px); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; z-index: 10000; transition: var(--transition); }
 .modal-overlay.active { opacity: 1; pointer-events: auto; }
 .modal-box { background: var(--white); padding: 40px; border-radius: var(--border-radius-lg); width: 100%; max-width: 440px; position: relative; }
@@ -121,7 +117,7 @@ body { background-color: var(--light-bg); color: var(--text-dark); overflow-x: h
 .input-icon input { width: 100%; padding: 12px 14px 12px 40px; border: 1px solid #cbd5e1; border-radius: var(--border-radius-md); outline: none; }
 
 /* MEGA FOOTER */
-.main-footer { background-color: var(--dark); color: rgba(255, 255, 255, 0.7); padding: 60px 0 20px 0; margin-top: auto; border-top: 4px solid var(--pak-green); }
+.main-footer { background-color: var(--dark); color: rgba(255, 255, 255, 0.7); padding: 60px 0 20px 0; margin-top: auto; border-top: 4px solid var(--pak-green); position: relative; z-index: 20; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
 .footer-brand h3 { color: var(--white); margin-bottom: 15px; }
 .footer-brand p { font-size: 0.9rem; line-height: 1.6; }
@@ -132,7 +128,7 @@ body { background-color: var(--light-bg); color: var(--text-dark); overflow-x: h
 .footer-links ul li a:hover { color: var(--gold); padding-left: 5px; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; font-size: 0.85rem; }
 
-/* MEDIA QUERIES */
+/* RESPONSIVE DESIGN */
 @media (max-width: 1200px) { .booking-form { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 992px) {
     .menu-toggle { display: block; }
@@ -142,5 +138,5 @@ body { background-color: var(--light-bg); color: var(--text-dark); overflow-x: h
     .grid-3, .grid-2 { grid-template-columns: 1fr; }
     .booking-form { grid-template-columns: 1fr; }
     .hero-title { font-size: 2rem; }
-    .services-section { padding: 480px 0 80px 0; }
+    .services-section { padding: 380px 0 80px 0; }
 }
